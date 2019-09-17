@@ -24,3 +24,27 @@ int main()
     Print(L);
     return 0;
 }
+List Insert( List L, ElementType X )
+{
+    List head,p,newhead;
+    ElementType x=X;
+    newhead=head=L;
+    while(head)
+    {
+        if(head->Next->Data>=x)
+        {
+            p=(struct Node *)malloc(sizeof(struct Node));
+            p->Data=x;
+            p->Next=head->Next;
+            head->Next=p;
+            return newhead;
+        }
+        head=head->Next;
+        
+        
+    }
+    
+    
+    
+    return newhead;
+}
