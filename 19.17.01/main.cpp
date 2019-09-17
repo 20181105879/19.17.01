@@ -1,15 +1,26 @@
-//
-//  main.cpp
-//  19.17.01
-//
-//  Created by s20181105879 on 2019/9/17.
-//  Copyright © 2019 s20181105879. All rights reserved.
-//
+#include <stdio.h>
+#include <stdlib.h>
 
-#include <iostream>
+typedef int ElementType;
+typedef struct Node *PtrToNode;
+struct Node {
+    ElementType Data;
+    PtrToNode   Next;
+};
+typedef PtrToNode List;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+List Read(); /* 细节在此不表 */
+void Print( List L ); /* 细节在此不表 */
+
+List Insert( List L, ElementType X );
+
+int main()
+{
+    List L;
+    ElementType X;
+    L = Read();
+    scanf("%d", &X);
+    L = Insert(L, X);
+    Print(L);
     return 0;
 }
